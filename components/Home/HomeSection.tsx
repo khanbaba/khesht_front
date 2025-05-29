@@ -9,7 +9,7 @@ export const HomeSection = () => {
                 میتونم در برنامه‌ریزی سفر و رزرو اقامتگاه بهت کمک کنم.
             </div>
             <div style={{ padding: '24px', width: '100%' }}>
-                <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{ minHeight: '120px' }} />
+                <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{}} />
             </div>
         </div>
     )
