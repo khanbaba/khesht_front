@@ -8,7 +8,7 @@ export const SearchBox = ({ rightIcon, leftIcon, wrapperStyles }: { rightIcon?: 
             {rightIcon && <div className={styles.rightIcon}>{rightIcon}</div>}
             <div className={styles.wrapper}>
                 <div className={styles.messageHidden}>
-                    <span style={{ visibility: 'hidden' }}>{message ? message : placeholder}</span>
+                    <span className={styles.spanhidden}>{message ? message : placeholder}</span>
                 </div>
                 <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder={placeholder} />
             </div>

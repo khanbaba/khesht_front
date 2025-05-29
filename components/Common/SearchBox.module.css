@@ -19,7 +19,7 @@
     box-sizing: border-box;
     background-color: transparent;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 14px;
     letter-spacing: inherit;
     height: 100%;
     bottom: 0px;
@@ -46,4 +46,11 @@
     position: relative;
     overflow-y: visible;
     width: 100%;
+    padding-inline: 10px;
+}
+
+.spanhidden {
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: inherit;
 }
