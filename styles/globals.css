@@ -1,42 +1,91 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@font-face {
+  font-family: IRANYekanX;
+  src:
+    url('https://assets.torob.com/nextjs/IRANYekanXVF.woff2') format('woff2 supports variations'),
+    url('https://assets.torob.com/nextjs/IRANYekanXVF.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  direction: rtl;
 }
 
-a {
-  color: inherit;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "IRANYekanX";
+  font-feature-settings: "ss02";
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+:root {
+  --brand-primary: #7432a4;
+  --bg-bright: #FFFFFF;
+  --bg-fog: #F8FAFC;
+  --brand-50: #f4e8fb;
+  --brand-100-light: #dabcf2;
+  --brand-500: #7432a4;
+  --brand-800-dark: #4e1c74;
+  --rose-50: #FFF0F2;
+  --rose-500: #F43F5E;
+  --rose-800: #9F1239;
+  --sky-50: #F8FAFC;
+  --sky-100: #F1F5F9;
+  --sky-300: #CBD5E1;
+  --sky-500: #64748B;
+  --sky-800: #1E293B;
+  --yellow-50: #FFF8E6;
+  --yellow-500: #EBB305;
+  --yellow-800: #854D0F;
+}
+
+.light-theme {
+  --brand-primary: #7432a4;
+  --bg-bright: #FFFFFF;
+  --bg-fog: #F8FAFC;
+  --brand-50: #f4e8fb;
+  --brand-100-light: #dabcf2;
+  --brand-500: #7432a4;
+  --brand-800-dark: #4e1c74;
+  --rose-50: #FFF0F2;
+  --rose-500: #F43F5E;
+  --rose-800: #9F1239;
+  --sky-50: #F8FAFC;
+  --sky-100: #F1F5F9;
+  --sky-300: #CBD5E1;
+  --sky-500: #64748B;
+  --sky-800: #1E293B;
+  --yellow-50: #FFF8E6;
+  --yellow-500: #EBB305;
+  --yellow-800: #854D0F;
+}
+
+.dark-theme {
+  --bg-bright: #15202B;
+  --bg-fog: #1B2733;
+  --brand-50: #ABF27B;
+  --brand-100-light: #9CE76A;
+  --brand-500: #54C039;
+  --brand-800-dark: #003D01;
+  --rose-50: #FFF0F2;
+  --rose-500: #F43F5E;
+  --rose-800: #9F1239;
+  --sky-50: #0F172B;
+  --sky-100: #1E293B;
+  --sky-300: #475569;
+  --sky-500: #94A3B8;
+  --sky-800: #F1F5F9;
+  --yellow-50: #FFF8E6;
+  --yellow-500: #EBB305;
+  --yellow-800: #854D0F;
+}
+
+.max-w {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
 }

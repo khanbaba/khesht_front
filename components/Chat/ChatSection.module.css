@@ -1,0 +1,22 @@
+.chatContainer {
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-bright);
+}
+
+.messageContainer {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatarContainer {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
