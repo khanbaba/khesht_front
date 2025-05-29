@@ -4,7 +4,7 @@ export const SearchBox = ({ rightIcon, leftIcon, wrapperStyles }: { rightIcon?: 
     return (
         <div className={styles.searchBox} style={wrapperStyles}>
             {rightIcon && <div className={styles.rightIcon}>{rightIcon}</div>}
-            <textarea />
+            <textarea placeholder="چطور میتونم بهتون کمک کنم؟" />
             {leftIcon && <div className={styles.leftIcon}>{leftIcon}</div>}
         </div>
     )

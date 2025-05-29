@@ -6,8 +6,7 @@
     border-radius: 10px;
     border: 1px solid var(--sky-300);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    width: calc(100% - 48px);
-    margin: 24px;
+    width: 100%;
 }
 
 .searchBox input {
