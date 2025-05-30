@@ -85,7 +85,7 @@ export const ChatSection = () => {
 
             </div>
             <div className={styles.searchContainer}>
-                <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{ minHeight: '60px' }} handleSearch={handleSearch} />
+                <SearchBox leftIcon={<img src="voice.png" style={{ objectFit: "contain", paddingTop: "4px" }} width={24} height={24} alt="search" />} rightIcon={<img src="send.png" width={24} height={24} style={{ objectFit: "contain", paddingTop: "4px" }} alt="search" />} wrapperStyles={{ minHeight: '60px' }} handleSearch={handleSearch} />
             </div>
         </div>
     )

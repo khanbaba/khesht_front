@@ -16,7 +16,7 @@ export const HomeSection = () => {
                 میتونم در برنامه‌ریزی سفر و رزرو اقامتگاه بهت کمک کنم.
             </div>
             <div style={{ padding: '24px', width: '100%' }}>
-                <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{}} handleSearch={handleSearch} />
+                <SearchBox leftIcon={<img src="voice.png" style={{ objectFit: "contain", paddingTop: "4px" }} width={24} height={24} alt="search" />} rightIcon={<img src="send.png" width={24} height={24} style={{ objectFit: "contain", paddingTop: "4px" }} alt="search" />} wrapperStyles={{}} handleSearch={handleSearch} />
             </div>
         </div>
     )
