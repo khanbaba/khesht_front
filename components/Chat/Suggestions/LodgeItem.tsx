@@ -24,7 +24,7 @@ const LodgeItem: React.FC<LodgeItemProps> = ({
             <div className={styles.container}>
                 <div className={styles.imageContainer}>
                     <img
-                        src={imageUrl}
+                        src={'https://storage.jajiga.com/public/pictures/medium/' + imageUrl}
                         alt={name}
                         className={styles.image}
                     />

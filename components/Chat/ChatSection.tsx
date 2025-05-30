@@ -53,8 +53,6 @@ export const ChatSection = () => {
     }
 
 
-    console.log(suggestions);
-
     return (
         <div className={styles.chatSection}>
             <Title label="مکالمه" />
@@ -63,15 +61,18 @@ export const ChatSection = () => {
                     {suggestions.map((item: any) => {
                         if (item.response_type === 'places') {
                             return (
-                                item.data.map((lodge: any) => {
-                                    return (
-                                        <LodgeItem key={lodge.id} imageUrl={lodge.image_url} name={lodge.title} rating={lodge.rating} review={lodge.review_count} price={lodge.price} url={lodge.web_url} />
-                                    )
-                                })
+                                <>
+                                    {item.data.map((lodge: any) => {
+                                        return (
+                                            <LodgeItem key={lodge.id} imageUrl={lodge.image_url} name={lodge.title} rating={lodge.rating} review={lodge.reviews_count} price={lodge.price} url={lodge.web_url} />
+                                        )
+                                    })}
+                                    <Map />
+                                </>
                             )
                         }
                         if (item.response_type === 'assistant') {
-                            return <p>{item.data}</p>
+                            return <p className={styles.assistantMessage}>{item.data}</p>
                         }
                         if (item.response_type === 'user') {
                             return <Message text={item.data} avatar={<img src="avatar.png" width={40} height={40} alt="avatar" />} />
@@ -82,7 +83,6 @@ export const ChatSection = () => {
                 </div>
                 {loading && <span style={{ paddingInline: '16px', fontSize: '12px', color: 'var(--sky-500)' }}>در حال جستجو...</span>}
 
-                {/* {!loading && <Map />} */}
             </div>
             <div className={styles.searchContainer}>
                 <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{ minHeight: '60px' }} handleSearch={handleSearch} />

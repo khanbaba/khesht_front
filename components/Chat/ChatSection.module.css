@@ -40,3 +40,10 @@
     flex: 1;
     padding-bottom: 156px;
 }
+
+.assistantMessage {
+    padding: 16px;
+    background-color: var(--sky-50);
+    border-radius: 16px;
+    margin: 16px;
+}
