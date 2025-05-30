@@ -1,11 +1,21 @@
+import router from "next/router";
 import styles from "./SearchBox.module.css";
 import { useState } from "react";
 export const SearchBox = ({ rightIcon, leftIcon, wrapperStyles }: { rightIcon?: React.ReactNode, leftIcon?: React.ReactNode, wrapperStyles?: React.CSSProperties }) => {
     const [message, setMessage] = useState('');
     const placeholder = 'چطور میتونم بهتون کمک کنم؟';
+
+    const handleSearch = () => {
+        localStorage.setItem('message', message);
+        setTimeout(() => {
+            setMessage('');
+        }, 10)
+        router.push(`/chat?id=${Math.floor(Math.random() * 10000)}`);
+    }
+
     return (
         <div className={styles.searchBox} style={wrapperStyles}>
-            {rightIcon && <div className={styles.rightIcon}>{rightIcon}</div>}
+            {rightIcon && <div className={styles.rightIcon} onClick={handleSearch}>{rightIcon}</div>}
             <div className={styles.wrapper}>
                 <div className={styles.messageHidden}>
                     <span className={styles.spanhidden}>{message ? message : placeholder}</span>

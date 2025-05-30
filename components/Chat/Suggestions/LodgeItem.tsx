@@ -32,7 +32,7 @@ const LodgeItem: React.FC<LodgeItemProps> = ({
                 <div className={styles.content}>
                     <div className={styles.ratingContainer}>
                         <span className={styles.rating}>{rating}</span>
-                        <span className={styles.review}>({review})</span>
+                        <span className={styles.review}>({review} دیدگاه)</span>
                     </div>
                     <div className={styles.title}>{name}</div>
                     <div className={styles.price}>
