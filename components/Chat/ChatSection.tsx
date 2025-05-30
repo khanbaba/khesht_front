@@ -45,6 +45,16 @@ export const ChatSection = () => {
     }, [router.query]);
 
 
+    const handleSearch = (msg: string) => {
+        setSuggestions((prevSuggestions: any[]) => [...prevSuggestions, { 'response_type': 'user', 'data': msg }]);
+        setTimeout(() => {
+            fetchData(msg);
+        }, 10);
+    }
+
+
+    console.log(suggestions);
+
     return (
         <div className={styles.chatSection}>
             <Title label="مکالمه" />
@@ -53,9 +63,9 @@ export const ChatSection = () => {
                     {suggestions.map((item: any) => {
                         if (item.response_type === 'places') {
                             return (
-                                item.places.map((lodge: any) => {
+                                item.data.map((lodge: any) => {
                                     return (
-                                        <LodgeItem key={lodge.id} imageUrl={lodge.image_urls[0]} name={lodge.title} rating={lodge.rating} review={lodge.review_count} price={lodge.price} url={lodge.web_url} />
+                                        <LodgeItem key={lodge.id} imageUrl={lodge.image_url} name={lodge.title} rating={lodge.rating} review={lodge.review_count} price={lodge.price} url={lodge.web_url} />
                                     )
                                 })
                             )
@@ -75,7 +85,7 @@ export const ChatSection = () => {
                 {/* {!loading && <Map />} */}
             </div>
             <div className={styles.searchContainer}>
-                <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{ minHeight: '60px' }} />
+                <SearchBox rightIcon={<img src="send.png" width={24} height={24} alt="search" />} wrapperStyles={{ minHeight: '60px' }} handleSearch={handleSearch} />
             </div>
         </div>
     )
