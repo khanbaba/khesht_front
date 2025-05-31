@@ -11,21 +11,23 @@ export const ChatSection = () => {
 
     const [suggestions, setSuggestions] = useState<any>([]);
     const [loading, setLoading] = useState(true);
+    const [session_id, setSesstionId] = useState('')
 
     const router = useRouter();
     const idRef = useRef<string | string[] | null>(null);
 
     const fetchData = async (msg: string) => {
         setLoading(true);
-        const url = `http://localhost:8001/user-prompt?prompt=${msg}`;
+        const url = `http://localhost:8001/user-prompt?prompt=${msg}&session_id=${session_id}`;
         const response = await fetch(url, {
             mode: 'cors'
         });
         const data = await response.json();
-        if (data.response.tool_response) {
-            setSuggestions((prevSuggestions: any[]) => [...prevSuggestions, { 'response_type': 'places', 'data': data.response.tool_response }]);
+        setSesstionId(data.session_id);
+        if (data.tool_response && data.tool_response.length > 0) {
+            setSuggestions((prevSuggestions: any[]) => [...prevSuggestions, { 'response_type': 'places', 'data': data.tool_response }]);
         } else {
-            setSuggestions((prevSuggestions: any[]) => [...prevSuggestions, { 'response_type': 'assistant', 'data': data.response }]);
+            setSuggestions((prevSuggestions: any[]) => [...prevSuggestions, { 'response_type': 'assistant', 'data': data.assistant_response }]);
         }
         setLoading(false);
     }

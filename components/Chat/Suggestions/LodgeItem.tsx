@@ -20,7 +20,7 @@ const LodgeItem: React.FC<LodgeItemProps> = ({
     url,
 }) => {
     return (
-        <a href={url} className="block" target="_blank">
+        <a style={{ textDecoration: 'none' }} href={url} className="block" target="_blank">
             <div className={styles.container}>
                 <div className={styles.imageContainer}>
                     <img
